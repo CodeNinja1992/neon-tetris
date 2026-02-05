@@ -155,7 +155,7 @@
     <h1>NEON TETRIS</h1>
     <div id="game-container">
         <div class="canvas-wrapper">
-            <canvas id="tetris" width="240" height="400"></canvas>
+            <canvas id="tetris" width="200" height="400"></canvas>
             <div id="game-over-overlay">
                 <h2>GAME OVER</h2>
                 <button onclick="resetGame()">RETRY</button>
@@ -260,11 +260,11 @@
             // Grid lines
             context.strokeStyle = 'rgba(0, 255, 255, 0.05)';
             context.lineWidth = 0.02;
-            for(let i=0; i<12; i++) {
+            for(let i=0; i<10; i++) {
                 context.beginPath(); context.moveTo(i, 0); context.lineTo(i, 20); context.stroke();
             }
             for(let i=0; i<20; i++) {
-                context.beginPath(); context.moveTo(0, i); context.lineTo(12, i); context.stroke();
+                context.beginPath(); context.moveTo(0, i); context.lineTo(10, i); context.stroke();
             }
 
             drawMatrix(arena, {x: 0, y: 0}, context);
@@ -413,7 +413,7 @@
             paused = false;
         }
 
-        const arena = createMatrix(12, 20);
+        const arena = createMatrix(10, 20);
         const player = { pos: {x: 0, y: 0}, matrix: null, score: 0, lines: 0, level: 1 };
 
         document.addEventListener('keydown', event => {
